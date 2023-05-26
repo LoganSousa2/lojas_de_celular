@@ -1,24 +1,26 @@
-<%= form_with(model: estoque) do |form| %>
-  <% if estoque.errors.any? %>
+<%= form_with(model: cliente) do |form| %>
+  <% if cliente.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(estoque.errors.count, "error") %> prohibited this estoque from being saved:</h2>
+      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
 
       <ul>
-        <% estoque.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% cliente.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
+
+
   <div class="field">
     <%= form.label :quantidade %>
-    <%= form.text_field :quantidade %>
+    <%= form.text_field :quantidade%>
   </div>
 
   <div class="field">
     <%= form.label :tipo %>
-    <%= form.text_field :tipo %>
+    <%= form.text_field :tipo%>
   </div>
 
   <div class="field">
@@ -27,8 +29,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :marcas %>
-    <%= form.text_field :marcas %>
+    <%= form.label :marca%>
+    <%= form.text_field :marca %>
   </div>
 
   <div class="actions">
