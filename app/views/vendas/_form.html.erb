@@ -11,30 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :valor %>
-    <%= form.text_field :valor %>
-  </div>
+  <div class="row">
+       <div class="col-lg-4 form-group">   
+           <%= form.label :valor, :class => 'control-label required' %>
+           <%= form.text_field :valor,  :class => 'form-control' %>
+       </div>
+       <div class="col-lg-4 form-group">   
+           <%= form.label :data_venda, :class => 'control-label required' %>
+           <%= form.text_field :data_venda,  :class => 'form-control' %>
+       </div>
 
-  <div class="field">
-    <%= form.label :data_venda %>
-    <%= form.date_select :data_venda %>
-  </div>
+       <div class="col-lg-4 form-group">   
+       <%= form.label :total_vendido, :class => 'control-label' %>
+       <%= form.text_field :total_vendido, :class => 'form-control' %>
+   </div>
+   </div>
+   <div class="row">
+     <div class="col-lg-4 form-group">   
+        <%= form.label :produto_id, :class => 'control-label required' %>
+        <%= form.text_field :produto_id, :class => 'form-control', :onkeypress=>"mask(this, mphone);", :onblur=>"mask(this, mphone);" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :total_vendido %>
-    <%= form.text_field :total_vendido %>
-  </div>
 
-  <div class="field">
-    <%= form.label :produto_id %>
-    <%= form.text_field :produto_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cliente_id %>
-    <%= form.text_field :cliente_id %>
-  </div>
+    <div class="col-lg-4 form-group">   
+    <%= form.label :cliente_id, :class => 'control-label ' %>
+    <%= form.text_field :cliente_id,  :class => 'form-control' %>
+</div>
 
   <div class="actions">
     <%= form.submit %>

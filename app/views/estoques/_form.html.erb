@@ -1,10 +1,10 @@
-<%= form_with(model: cliente) do |form| %>
-  <% if cliente.errors.any? %>
+<%= form_with(model: estoque) do |form| %>
+  <% if estoque.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+      <h2><%= pluralize(estoque.errors.count, "error") %> prohibited this estoque from being saved:</h2>
 
       <ul>
-        <% cliente.errors.full_messages.each do |msg| %>
+        <% estoque.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -12,28 +12,30 @@
   <% end %>
 
 
-
-  <div class="field">
-    <%= form.label :quantidade %>
-    <%= form.text_field :quantidade%>
+  <div class="row">
+  <div class="col-lg-6 form-group">   
+      <%= form.label :quantidade, :class => 'control-label required' %>
+      <%= form.text_field :quantidade,  :class => 'form-control' %>
   </div>
+ 
 
-  <div class="field">
-    <%= form.label :tipo %>
-    <%= form.text_field :tipo%>
-  </div>
+  <div class="col-lg-6 form-group">   
+  <%= form.label :tipo, :class => 'control-label required' %>
+  <%= form.text_field :tipo,  :class => 'form-control' %>
+</div>
 
-  <div class="field">
-    <%= form.label :ano %>
-    <%= form.text_field :ano %>
-  </div>
+<div class="col-lg-6 form-group">   
+<%= form.label :ano, :class => 'control-label' %>
+<%= form.text_field :ano, :class => 'form-control' %>
+</div>
 
-  <div class="field">
-    <%= form.label :marca%>
-    <%= form.text_field :marca %>
-  </div>
+<div class="col-lg-6 form-group">   
+<%= form.label :marca, :class => 'control-label' %>
+<%= form.text_field :marca, :class => 'form-control' %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+

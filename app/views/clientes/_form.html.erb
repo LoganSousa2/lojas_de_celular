@@ -11,30 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
-  </div>
+  <div class="col-lg-4 form-group">   
+  <%= form.label :nome, :class => 'control-label required' %>
+  <%= form.text_field :nome,  :class => 'form-control' %>
+</div>
+<div class="col-lg-4 form-group">   
+  <%= form.label :cpf, :class => 'control-label required' %>
+  <%= form.text_field :cpf,  :class => 'form-control' %>
+</div>
 
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf %>
-  </div>
+<div class="col-lg-4 form-group">   
+<%= form.label :email, :class => 'control-label' %>
+<%= form.text_field :email, :class => 'form-control' %>
+</div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+<div class="col-lg-4 form-group">   
+<%= form.label :telefone, :class => 'control-label ' %>
+<%= form.text_field :telefone,  :class => 'form-control' %>
+</div>
 
-  <div class="field">
-    <%= form.label :telefone %>
-    <%= form.text_field :telefone %>
-  </div>
+<div class="col-lg-4 form-group">   
+<%= form.label :endereco, :class => 'control-label ' %>
+<%= form.text_field :endereco,  :class => 'form-control' %>
+</div>
 
-  <div class="field">
-    <%= form.label :endereco %>
-    <%= form.text_field :endereco %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

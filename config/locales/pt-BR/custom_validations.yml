@@ -19,3 +19,11 @@ pt-BR:
     attributes:
       user:
         password: "Senha"
+        fornecedor : 
+        cnpj_cpf: "CNPJ/CPF"
+        cep : "CEP"
+        produtos :
+        preco : "PRECO"
+
+
+    

@@ -1,33 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="categdespesas index">
+      <h2>Estoques</h2>
+    <%= form_tag produtos_path( format:"html"), :method => 'get' do %>  
+      <div class="row">
+            <div class="col-lg-5  form-group">  
+                <%= text_field_tag :nome, params[:nome], :class => 'form-control', :placeholder=>"Digite o nome do estoques para pesquisar" %>  
+              </div>
+              <div class="col-lg-2 form-group">
+                <%= submit_tag "Pesquisar", :class => "btn btn-primary colorprimarybtn" %>
+              </div>
 
-<h1>Estoques</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Quantidade</th>
-      <th>Tipo</th>
-      <th>Ano</th>
-      <th>Marcas</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @estoques.each do |estoque| %>
-      <tr>
-        <td><%= estoque.quantidade %></td>
-        <td><%= estoque.tipo %></td>
-        <td><%= estoque.ano %></td>
-        <td><%= estoque.marcas %></td>
-        <td><%= link_to 'Show', estoque %></td>
-        <td><%= link_to 'Edit', edit_estoque_path(estoque) %></td>
-        <td><%= link_to 'Destroy', estoque, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+           <div class="col-lg-2 form-group">  
+                  <span class="input-group-btn" style="display: inline-block;"><button class="btn btn-primary colorprimarybtn" type="button" onclick="javascript: location.href='<%= new_fornecedor_path %>';"><i class="fa fa-plus-circle"></i> Novo Fornecedor</button></span>
+            </div>
+        </div>
+      </div>
+      <%end%>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-hover table-striped" cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+        <th>Quantidade</th>
+        <th>Ano</th>
+        <th>Marcas</th>
+        <th colspan="4"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @estoques.each do |estoque| %>
+        <tr>
+          <td><%= "%06d"%estoque.id %></td>
+          <td><%= estoque.quantidade %></td>
+          <td><%= estoque.ano%></td>
+          <td><%= estoque.marca%></td>
+          <td><%= link_to 'Visualizar', estoque %></td>
+          <td><%= link_to 'Alterar', edit_estoque_path(estoque) %></td>   
+          <td><%= link_to 'Excluir', estoque, method: :delete,remote: true, class: 'remove-tag', data: { confirm: 'Deseja excluir o estoque?' } %></td>
+        </tr>
+      <% end %>
+        </tbody>
+    </table>
+  </div>
+ 
+  </div>
 
-<br>
-
-<%= link_to 'New Estoque', new_estoque_path %>
