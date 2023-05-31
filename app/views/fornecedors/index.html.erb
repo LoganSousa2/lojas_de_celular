@@ -1,5 +1,7 @@
 <div class="categdespesas index">
       <h2>Fornecedores </h2>
+      <%= link_to "Relatório ", relatorio_fornecedors_path(format: 'pdf'), :target => "_blank", :class => "btn btn-primary colorprimarybtn" %>
+    
     <%= form_tag fornecedors_path( format:"html"), :method => 'get' do %>  
       <div class="row">
             <div class="col-lg-5  form-group">  

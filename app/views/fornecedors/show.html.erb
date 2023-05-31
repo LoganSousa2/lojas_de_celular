@@ -41,7 +41,6 @@
   <input readonly="true" class = 'form-control' value="<%= @fornecedor.estado %>" />
 </div>
 
-<div class="col-lg-3 form-group">   
-   <label class = 'control-label'>CEP</label>
-  <input readonly="true" class = 'form-control' value="<%= @fornecedor.cep %>" />
-</div>
+
+<%= link_to 'Edit', edit_produto_path(@fornecedor) %> |
+<%= link_to 'Back', produtos_path %>

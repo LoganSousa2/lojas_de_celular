@@ -115,7 +115,8 @@ a.menulink:link, a.menulink:visited{
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: cor: rgb(255, 192, 203);
+
 }
 
 .navbar-btn {
@@ -144,7 +145,7 @@ a.menulink:link, a.menulink:visited{
 #sidebar {
     min-width: 260px;
     max-width: 260px;
-    background: var(--colorbasic2);
+    background: #FFC0CB;
     color: var(--colortext);
     transition: all 0.3s;
 }
@@ -155,7 +156,7 @@ a.menulink:link, a.menulink:visited{
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: var(--colorbasic);
+    background: #FFA7B9;
 }
 
 #sidebar ul.components {

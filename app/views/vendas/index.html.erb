@@ -10,7 +10,7 @@
               </div>
 
            <div class="col-lg-2 form-group">  
-                  <span class="input-group-btn" style="display: inline-block;"><button class="btn btn-primary colorprimarybtn" type="button" onclick="javascript: location.href='<%= new_fornecedor_path %>';"><i class="fa fa-plus-circle"></i> Novo Fornecedor</button></span>
+                  <span class="input-group-btn" style="display: inline-block;"><button class="btn btn-primary colorprimarybtn" type="button" onclick="javascript: location.href='<%= new_venda_path %>';"><i class="fa fa-plus-circle"></i> Novo Venda</button></span>
             </div>
         </div>
       </div>
@@ -26,18 +26,19 @@
         <th>Cliente</th>
         <th colspan="4"></th>
       </tr>
-    </thead>
+    </thead> 
   
     <tbody>
       <% @vendas.each do |venda| %>
           <tr>
           <td><%= "%06d"%venda.id %></td>
-          <td><%= venda.nome %></td>
-          <td><%= venda.cpf%></td>
-          <td><%= venda.telefone%></td>
+          <td><%= venda.valor%></td>
+          <td><%= venda.data%></td>
+          <td><%= venda.produto%></td>
+          <td><%= venda.cliente%></td>
           <td><%= link_to 'Visualizar', venda %></td>
           <td><%= link_to 'Alterar', edit_venda_path(venda)%></td>   
-          <td><%= link_to 'Excluir', cliente, method: :delete,remote: true, class: 'remove-tag', data: { confirm: 'Deseja excluir o venda?' } %></td>
+          <td><%= link_to 'Excluir', venda, method: :delete,remote: true, class: 'remove-tag', data: { confirm: 'Deseja excluir o venda?' } %></td>
         </tr>
       <% end %>
         </tbody>
