@@ -10,11 +10,7 @@ Rails.application.routes.draw do
   end
 end
 
-  resources :fornecedors, :path => "fornecedors" do
-  collection do
-    get "/relatorio"  => "fornecedors#relatorio", :as => "relatorio" 
-  end
-end
+  resources :fornecedors
 root to: 'produtos#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

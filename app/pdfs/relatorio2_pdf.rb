@@ -14,36 +14,44 @@ class Relatorio2Pdf < Prawn::Document
       table tabelacabecalho , :cell_style => { :font =>"Courier", :size => 10, } do
         column(0).width = 60
         column(0).font_style = :bold
-        column(1).width = 150
+        column(1).width = 90
         column(0).font_style = :bold
         column(2).width = 50
         column(0).font_style = :bold
-        column(3).width = 70
+        column(3).width = 50
         column(0).font_style = :bold
         column(4).width = 70
         column(0).font_style = :bold
-        
+        column(5).width = 70
+        column(0).font_style = :bold
+        column(6).width = 60
+        column(0).font_style = :bold
+        column(7).width = 70
+        column(0).font_style = :bold
       end
       @dados.each do |dado|
         table tabeladados(dado) , :cell_style => { :font =>"Courier", :size => 10, } do
           column(0).width = 60
           column(0).font_style = :bold
-          column(1).width = 150
+          column(1).width = 90
           column(2).width = 50
-          column(3).width = 70
+          column(3).width = 60
           column(4).width = 70
-          column(5).width = 120
+          column(5).width = 70
+          column(6).width = 70
+          column(7).width = 70
+         
         end
       end
     end
 
 
   def tabelacabecalho
-      [["cod", "Nome", "Cnpj_cpf", "Email", "Telefone",  "Endereco", "Cidade", "Estado"]]
+      [["cod", "Nome", "Cpf_cnpj", "Email", "Telefone",  "Endereco", "Cidade", "Estado", "Fornrcedor"]]
   end 
 
   def tabeladados(dado)
-    [[dado.id.to_s, dado.nome, dado.cnpj_cpf, dado.email, dado.telefone, dado.endereco, dado.cidade, dado.cidade]]
+    [[dado.id.to_s, dado.nome, dado.cpf_cnpj, dado.email, dado.telefone, dado.endereco, dado.cidade, dado.estado]]
   end 
 
   def floatMoney(valor)

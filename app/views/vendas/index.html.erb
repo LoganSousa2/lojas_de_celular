@@ -1,6 +1,6 @@
 <div class="categdespesas index">
       <h2>Vendas</h2>
-    <%= form_tag produtos_path( format:"html"), :method => 'get' do %>  
+    <%= form_tag vendas_path( format:"html"), :method => 'get' do %>  
       <div class="row">
             <div class="col-lg-5  form-group">  
                 <%= text_field_tag :nome, params[:nome], :class => 'form-control', :placeholder=>"Digite o nome vendas para pesquisar" %>  
@@ -21,21 +21,20 @@
         <thead>
         <tr>
         <th>Valor</th>
-        <th>Data</th>
+        <th>Data_venda</th>
+        <th>Total_vendido</th>
         <th>Produto</th>
-        <th>Cliente</th>
         <th colspan="4"></th>
       </tr>
-    </thead> 
+    </thead>
   
     <tbody>
       <% @vendas.each do |venda| %>
           <tr>
           <td><%= "%06d"%venda.id %></td>
           <td><%= venda.valor%></td>
-          <td><%= venda.data%></td>
-          <td><%= venda.produto%></td>
-          <td><%= venda.cliente%></td>
+          <td><%= venda.data_venda%></td>
+          <td><%= venda.total_vendido%></td>
           <td><%= link_to 'Visualizar', venda %></td>
           <td><%= link_to 'Alterar', edit_venda_path(venda)%></td>   
           <td><%= link_to 'Excluir', venda, method: :delete,remote: true, class: 'remove-tag', data: { confirm: 'Deseja excluir o venda?' } %></td>

@@ -1,7 +1,5 @@
 <div class="categdespesas index">
       <h2>Fornecedores </h2>
-      <%= link_to "Relatório ", relatorio_fornecedors_path(format: 'pdf'), :target => "_blank", :class => "btn btn-primary colorprimarybtn" %>
-    
     <%= form_tag fornecedors_path( format:"html"), :method => 'get' do %>  
       <div class="row">
             <div class="col-lg-5  form-group">  
@@ -24,9 +22,11 @@
         <tr>
         <th>COD</th>
         <th>Nome</th>
-        <th>Telefone</th>
+        <th>Cpf_cnpj</th>
         <th>Email</th>
-        <th colspan="4"></th>
+        <th>Telefone</th>
+        
+        <th colspan="3"></th>
       </tr>
     </thead>
   
@@ -35,8 +35,9 @@
         <tr>
           <td><%= "%06d"%fornecedor.id %></td>
           <td><%= fornecedor.nome %></td>
-          <td><%= fornecedor.telefone %></td>
+          <td><%= fornecedor.cpf_cnpj%></td>
           <td><%= fornecedor.email %></td>
+          <td><%= fornecedor.telefone %></td>
           <td><%= link_to 'Visualizar', fornecedor %></td>
           <td><%= link_to 'Alterar', edit_fornecedor_path(fornecedor) %></td>   
           <td><%= link_to 'Excluir', fornecedor, method: :delete,remote: true, class: 'remove-tag', data: { confirm: 'Deseja excluir o fornecedor?' } %></td>
